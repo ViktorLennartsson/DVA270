@@ -27,4 +27,5 @@ void led_write(int LED_ID, int STATE);
 int button_read(int buttonNumber);
 void delay_s(int time);
 void delay_ms(int time);
+int get_rtc(void);
 #endif

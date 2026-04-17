@@ -9,6 +9,7 @@
 #include <nrfx_rtc.h>
 #include <string.h>
 #include <nrfx_uarte.h>
+#include <stdio.h>
 
 //Definierar vilka pinnar som ska användas för att skicka och ta emot data:
 #define PIN_TXD 20
@@ -112,4 +113,10 @@ void delay_s(int time)
 void delay_ms(int time)	
 {
 	nrfx_systick_delay_ms(time);
+}
+
+//Få tiden från rtc
+int get_rtc(void)
+{
+	return nrfx_rtc_counter_get(&rtc_instance);
 }
